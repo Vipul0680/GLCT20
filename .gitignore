@@ -1,0 +1,9 @@
+# Ignore large files
+*.pdf
+extract.py
+extracted_text.txt
+err.log
+
+node_modules/
+.env
+.vercel/

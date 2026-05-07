@@ -3,39 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLCT20 Replica</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="GLCT20 - Intercontinental Legends Championship Replica">
+    <title>GLCT20 | Premium Cricket Experience</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar Placeholder -->
+
+    <!-- Sticky Navbar -->
     <header class="navbar">
-        <div class="logo">GLCT20</div>
-        <nav class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">FIXTURE</a>
-            <a href="#">POINTS TABLE</a>
-            <a href="#">TEAMS</a>
-            <a href="#">NEWS</a>
-            <a href="#">GALLERY</a>
-        </nav>
-        <button class="nav-btn">BUY TICKETS</button>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.jpeg" alt="GLCT20 Logo" onerror="this.outerHTML='<span class=\'logo-text\'>GLCT20</span>'">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="active">HOME</a>
+                <a href="#fixtures">FIXTURES</a>
+                <a href="#teams">TEAMS</a>
+                <a href="#points-table">POINTS TABLE</a>
+                <a href="#news">NEWS</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="btn-primary">BUY TICKETS</button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Main Content Container Placeholder -->
-    <main class="main-content">
-        <section class="fixtures-section">
-            <h2 class="section-title"><i class="fa-solid fa-baseball-bat-ball"></i> FIXTURE</h2>
-            <div class="fixtures-container">
-                <!-- We will populate the cards here once the source code or content is provided -->
-                <div class="placeholder-card">Awaiting Data...</div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="close-menu"><i class="fas fa-times"></i></div>
+        <a href="#home">HOME</a>
+        <a href="#fixtures">FIXTURES</a>
+        <a href="#teams">TEAMS</a>
+        <a href="#points-table">POINTS TABLE</a>
+        <a href="#news">NEWS</a>
+        <button class="btn-primary mobile-btn">BUY TICKETS</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero swiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>THE LEGENDS ARE BACK</h1>
+                    <p>Experience the thrill of the ultimate cricket championship</p>
+                    <button class="btn-primary">DISCOVER MORE</button>
+                </div>
             </div>
-        </section>
-    </main>
-    
+            <!-- Slide 2 -->
+            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover;">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>BATTLE FOR GLORY</h1>
+                    <p>Watch your favorite stars in action</p>
+                    <button class="btn-primary">VIEW FIXTURES</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+
+    <!-- Fixtures Section -->
+    <section id="fixtures" class="section fixtures-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> UPCOMING FIXTURES</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-target="upcoming">UPCOMING</button>
+                <button class="tab-btn" data-target="results">RESULTS</button>
+            </div>
+
+            <div class="fixtures-grid swiper fixtures-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Match Card 1 -->
+                    <div class="swiper-slide match-card">
+                        <div class="match-header">
+                            <span class="match-number">Match 1</span>
+                            <span class="match-status">UPCOMING</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T1</div>
+                                <h3>TEAM ALPHA</h3>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T2</div>
+                                <h3>TEAM BETA</h3>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <p><i class="fas fa-clock"></i> 14:00 GST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Dubai International Stadium</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Match Card 2 -->
+                    <div class="swiper-slide match-card">
+                        <div class="match-header">
+                            <span class="match-number">Match 2</span>
+                            <span class="match-status highlight">LIVE</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T3</div>
+                                <h3>TEAM GAMMA</h3>
+                            </div>
+                            <div class="vs pulse">VS</div>
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T4</div>
+                                <h3>TEAM DELTA</h3>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <p><i class="fas fa-clock"></i> 18:00 GST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Sharjah Cricket Stadium</p>
+                        </div>
+                    </div>
+                     <!-- Match Card 3 -->
+                     <div class="swiper-slide match-card">
+                        <div class="match-header">
+                            <span class="match-number">Match 3</span>
+                            <span class="match-status">UPCOMING</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T5</div>
+                                <h3>TEAM EPSILON</h3>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <div class="team-logo placeholder-logo">T1</div>
+                                <h3>TEAM ALPHA</h3>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <p><i class="fas fa-clock"></i> 20:00 GST</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Abu Dhabi Stadium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next fix-next"></div>
+                <div class="swiper-button-prev fix-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="section teams-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> COMPETING TEAMS</h2>
+            <div class="teams-grid">
+                <div class="team-capsule">
+                    <div class="team-circle">T1</div>
+                    <h4>TEAM ALPHA</h4>
+                </div>
+                <div class="team-capsule">
+                    <div class="team-circle">T2</div>
+                    <h4>TEAM BETA</h4>
+                </div>
+                <div class="team-capsule">
+                    <div class="team-circle">T3</div>
+                    <h4>TEAM GAMMA</h4>
+                </div>
+                <div class="team-capsule">
+                    <div class="team-circle">T4</div>
+                    <h4>TEAM DELTA</h4>
+                </div>
+                <div class="team-capsule">
+                    <div class="team-circle">T5</div>
+                    <h4>TEAM EPSILON</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Points Table -->
+    <section id="points-table" class="section points-table-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-list-ol"></i> POINTS TABLE</h2>
+            <div class="table-responsive">
+                <table class="points-table">
+                    <thead>
+                        <tr>
+                            <th>POS</th>
+                            <th>TEAM</th>
+                            <th>M</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>NR</th>
+                            <th>PTS</th>
+                            <th>NRR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-team">
+                            <td>1</td>
+                            <td class="team-name"><div class="mini-logo">T1</div> TEAM ALPHA</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>+1.240</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="team-name"><div class="mini-logo">T2</div> TEAM BETA</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>6</td>
+                            <td>+0.850</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="team-name"><div class="mini-logo">T3</div> TEAM GAMMA</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>-0.120</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="team-name"><div class="mini-logo">T4</div> TEAM DELTA</td>
+                            <td>5</td>
+                            <td>1</td>
+                            <td>4</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>-1.500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <p>Top 2 teams qualify for the Final.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg-pattern"></div>
+        <div class="container footer-content">
+            <div class="footer-hashtag">#LEGENDSINACTION</div>
+            
+            <div class="footer-links">
+                <a href="#fixtures">Fixtures</a>
+                <a href="#teams">Teams</a>
+                <a href="#points-table">Points Table</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 GLCT20 Championship. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
