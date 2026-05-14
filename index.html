@@ -25,7 +25,7 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo.jpeg" alt="GLCT20 Logo" onerror="this.outerHTML='<span class=\'logo-text\'>GLCT20</span>'">
+                <img src="logo.png" alt="GLCT20 Logo" onerror="this.outerHTML='<span class=\'logo-text\'>GLCT20</span>'">
             </a>
             
             <nav class="nav-links">
@@ -37,7 +37,6 @@
             </nav>
             
             <div class="nav-actions">
-                <button class="btn-primary">BUY TICKETS</button>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -53,26 +52,25 @@
         <a href="#teams">TEAMS</a>
         <a href="#points-table">POINTS TABLE</a>
         <a href="#news">NEWS</a>
-        <button class="btn-primary mobile-btn">BUY TICKETS</button>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero swiper">
         <div class="swiper-wrapper">
             <!-- Slide 1 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide slide-bg-1">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <h1>THE LEGENDS ARE BACK</h1>
+                    <h1>THE ICONS ARE BACK</h1>
                     <p>Experience the thrill of the ultimate cricket championship</p>
                     <button class="btn-primary">DISCOVER MORE</button>
                 </div>
             </div>
             <!-- Slide 2 -->
-            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover;">
+            <div class="swiper-slide slide-bg-2">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <h1>BATTLE FOR GLORY</h1>
+                    <h1>THE GLOBE PLAYS HERE</h1>
                     <p>Watch your favorite stars in action</p>
                     <button class="btn-primary">VIEW FIXTURES</button>
                 </div>
@@ -93,78 +91,97 @@
                 <button class="tab-btn" data-target="results">RESULTS</button>
             </div>
 
-            <div class="fixtures-grid swiper fixtures-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Match Card 1 -->
-                    <div class="swiper-slide match-card">
-                        <div class="match-header">
-                            <span class="match-number">Match 1</span>
-                            <span class="match-status">UPCOMING</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T1</div>
-                                <h3>TEAM ALPHA</h3>
+            <div id="fixtures-container">
+                <div class="fixtures-grid swiper fixtures-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Match Card 1 -->
+                        <div class="swiper-slide match-card">
+                            <div class="match-header">
+                                <span class="match-number">Match 1</span>
+                                <span class="match-status">UPCOMING</span>
                             </div>
-                            <div class="vs">VS</div>
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T2</div>
-                                <h3>TEAM BETA</h3>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/Cape Town Tigers.png" alt="Cape Town Tigers">
+                                    </div>
+                                    <h3>Cape Town Tigers</h3>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/Dubai Royals.png" alt="Dubai Royals">
+                                    </div>
+                                    <h3>Dubai Royals</h3>
+                                </div>
+                            </div>
+                            <div class="match-footer">
+                                <p><i class="fas fa-clock"></i> 14:00 GST</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Dubai International Stadium</p>
                             </div>
                         </div>
-                        <div class="match-footer">
-                            <p><i class="fas fa-clock"></i> 14:00 GST</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Dubai International Stadium</p>
+                        
+                        <!-- Match Card 2 -->
+                        <div class="swiper-slide match-card">
+                            <div class="match-header">
+                                <span class="match-number">Match 2</span>
+                                <span class="match-status highlight">LIVE</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/London Strickers.png" alt="London Strickers">
+                                    </div>
+                                    <h3>London Strickers</h3>
+                                </div>
+                                <div class="vs pulse">VS</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/Mumbai Crown.png" alt="Mumbai Crown">
+                                    </div>
+                                    <h3>Mumbai Crown</h3>
+                                </div>
+                            </div>
+                            <div class="match-footer">
+                                <p><i class="fas fa-clock"></i> 18:00 GST</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Sharjah Cricket Stadium</p>
+                            </div>
+                        </div>
+                         <!-- Match Card 3 -->
+                         <div class="swiper-slide match-card">
+                            <div class="match-header">
+                                <span class="match-number">Match 3</span>
+                                <span class="match-status">UPCOMING</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/New York kings.png" alt="New York kings">
+                                    </div>
+                                    <h3>New York kings</h3>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="Image/Sydney Warriors.png" alt="Sydney Warriors">
+                                    </div>
+                                    <h3>Sydney Warriors</h3>
+                                </div>
+                            </div>
+                            <div class="match-footer">
+                                <p><i class="fas fa-clock"></i> 20:00 GST</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Abu Dhabi Stadium</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Match Card 2 -->
-                    <div class="swiper-slide match-card">
-                        <div class="match-header">
-                            <span class="match-number">Match 2</span>
-                            <span class="match-status highlight">LIVE</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T3</div>
-                                <h3>TEAM GAMMA</h3>
-                            </div>
-                            <div class="vs pulse">VS</div>
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T4</div>
-                                <h3>TEAM DELTA</h3>
-                            </div>
-                        </div>
-                        <div class="match-footer">
-                            <p><i class="fas fa-clock"></i> 18:00 GST</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Sharjah Cricket Stadium</p>
-                        </div>
-                    </div>
-                     <!-- Match Card 3 -->
-                     <div class="swiper-slide match-card">
-                        <div class="match-header">
-                            <span class="match-number">Match 3</span>
-                            <span class="match-status">UPCOMING</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T5</div>
-                                <h3>TEAM EPSILON</h3>
-                            </div>
-                            <div class="vs">VS</div>
-                            <div class="team">
-                                <div class="team-logo placeholder-logo">T1</div>
-                                <h3>TEAM ALPHA</h3>
-                            </div>
-                        </div>
-                        <div class="match-footer">
-                            <p><i class="fas fa-clock"></i> 20:00 GST</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Abu Dhabi Stadium</p>
-                        </div>
-                    </div>
+                    <div class="swiper-button-next fix-next"></div>
+                    <div class="swiper-button-prev fix-prev"></div>
                 </div>
-                <div class="swiper-button-next fix-next"></div>
-                <div class="swiper-button-prev fix-prev"></div>
+            </div>
+            
+            <div id="results-coming-soon" class="coming-soon-message" style="display: none;">
+                <h3>RESULTS COMING SOON</h3>
+                <p>Stay tuned for the tournament results!</p>
             </div>
         </div>
     </section>
@@ -172,27 +189,63 @@
     <!-- Teams Section -->
     <section id="teams" class="section teams-section">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-shield-alt"></i> COMPETING TEAMS</h2>
-            <div class="teams-grid">
-                <div class="team-capsule">
-                    <div class="team-circle">T1</div>
-                    <h4>TEAM ALPHA</h4>
+            <div class="section-header-flex">
+                <h2 class="section-title"><img src="GLC logo.png" alt="Logo" class="title-icon"> TEAMS</h2>
+                <div class="team-nav-buttons">
+                    <div class="swiper-button-prev team-prev"></div>
+                    <div class="swiper-button-next team-next"></div>
                 </div>
-                <div class="team-capsule">
-                    <div class="team-circle">T2</div>
-                    <h4>TEAM BETA</h4>
-                </div>
-                <div class="team-capsule">
-                    <div class="team-circle">T3</div>
-                    <h4>TEAM GAMMA</h4>
-                </div>
-                <div class="team-capsule">
-                    <div class="team-circle">T4</div>
-                    <h4>TEAM DELTA</h4>
-                </div>
-                <div class="team-capsule">
-                    <div class="team-circle">T5</div>
-                    <h4>TEAM EPSILON</h4>
+            </div>
+            <div class="teams-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="team-card card-tigers">
+                            <img src="Image/Cape Town Tigers.png" alt="Cape Town Tigers" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>Cape Town Tigers</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card card-royals">
+                            <img src="Image/Dubai Royals.png" alt="Dubai Royals" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>Dubai Royals</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card card-strickers">
+                            <img src="Image/London Strickers.png" alt="London Strickers" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>London Strickers</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card card-crown">
+                            <img src="Image/Mumbai Crown.png" alt="Mumbai Crown" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>Mumbai Crown</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card card-kings">
+                            <img src="Image/New York kings.png" alt="New York kings" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>New York kings</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card card-warriors">
+                            <img src="Image/Sydney Warriors.png" alt="Sydney Warriors" class="team-card-logo">
+                            <div class="team-card-info">
+                                <h4>Sydney Warriors</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -217,45 +270,65 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="top-team">
+                        <tr>
                             <td>1</td>
-                            <td class="team-name"><div class="mini-logo">T1</div> TEAM ALPHA</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>1</td>
+                            <td class="team-name"><img src="Image/Cape Town Tigers.png" class="mini-logo" alt="CTT"> Cape Town Tigers</td>
                             <td>0</td>
-                            <td>8</td>
-                            <td>+1.240</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td class="team-name"><div class="mini-logo">T2</div> TEAM BETA</td>
-                            <td>5</td>
-                            <td>3</td>
-                            <td>2</td>
+                            <td class="team-name"><img src="Image/Dubai Royals.png" class="mini-logo" alt="DR"> Dubai Royals</td>
                             <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="team-name"><img src="Image/London Strickers.png" class="mini-logo" alt="LS"> London Strickers</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="team-name"><img src="Image/Mumbai Crown.png" class="mini-logo" alt="MC"> Mumbai Crown</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="team-name"><img src="Image/New York kings.png" class="mini-logo" alt="NYK"> New York kings</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
+                        </tr>
+                        <tr>
                             <td>6</td>
-                            <td>+0.850</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td class="team-name"><div class="mini-logo">T3</div> TEAM GAMMA</td>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>3</td>
+                            <td class="team-name"><img src="Image/Sydney Warriors.png" class="mini-logo" alt="SW"> Sydney Warriors</td>
                             <td>0</td>
-                            <td>4</td>
-                            <td>-0.120</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td class="team-name"><div class="mini-logo">T4</div> TEAM DELTA</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>4</td>
                             <td>0</td>
-                            <td>2</td>
-                            <td>-1.500</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.000</td>
                         </tr>
                     </tbody>
                 </table>
@@ -270,14 +343,13 @@
     <footer class="footer">
         <div class="footer-bg-pattern"></div>
         <div class="container footer-content">
-            <div class="footer-hashtag">#LEGENDSINACTION</div>
+            <div class="footer-hashtag">#Theglobalplayhere</div>
             
             <div class="footer-links">
                 <a href="#fixtures">Fixtures</a>
                 <a href="#teams">Teams</a>
                 <a href="#points-table">Points Table</a>
                 <a href="#">About Us</a>
-                <a href="#">Contact</a>
             </div>
 
             <div class="social-icons">

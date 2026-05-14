@@ -64,7 +64,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Navbar scroll effect
+    // 4. Initialize Teams Swiper
+    const teamsSwiper = new Swiper('.teams-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.team-next',
+            prevEl: '.team-prev',
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 25,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+        }
+    });
+
+    // 5. Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -78,13 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 5. Tabs toggle logic (mock logic)
+    // 6. Tabs toggle logic
     const tabs = document.querySelectorAll('.tab-btn');
+    const fixturesContainer = document.getElementById('fixtures-container');
+    const resultsComingSoon = document.getElementById('results-coming-soon');
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            // Currently just for visual demo, when actual content arrives we can map tabs to sliders
+
+            const target = tab.getAttribute('data-target');
+            if (target === 'results') {
+                fixturesContainer.style.display = 'none';
+                resultsComingSoon.style.display = 'block';
+            } else {
+                fixturesContainer.style.display = 'block';
+                resultsComingSoon.style.display = 'none';
+                // Trigger swiper update in case it was hidden
+                fixturesSwiper.update();
+            }
         });
     });
 });
