@@ -1,0 +1,29 @@
+interactive rebase in progress; onto 2a77bb1
+Last command done (1 command done):
+   pick edbe501 # Initial website built
+Next commands to do (3 remaining commands):
+   pick c8e9b8f # Update teams image
+   pick 246c9d2 # Updated fixtures, teams section, results tab, and points table
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'main' on '2a77bb1'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .gitignore
+	new file:   extract.py
+	new file:   extracted_text.txt
+	deleted:    logo.jpeg
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+	both modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	status_ascii.txt
+	status_ascii_2.txt
+
