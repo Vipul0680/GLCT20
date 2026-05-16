@@ -20,82 +20,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Initialize Hero Swiper
-    const heroSwiper = new Swiper('.hero.swiper', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        }
-    });
+    const heroElement = document.querySelector('.hero.swiper');
+    if (heroElement) {
+        const heroSwiper = new Swiper('.hero.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+    }
 
     // 3. Initialize Fixtures Swiper
-    const fixturesSwiper = new Swiper('.fixtures-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.fix-next',
-            prevEl: '.fix-prev',
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 1.5,
-                spaceBetween: 20,
+    const fixturesElement = document.querySelector('.fixtures-swiper');
+    let fixturesSwiper;
+    if (fixturesElement) {
+        fixturesSwiper = new Swiper('.fixtures-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.fix-next',
+                prevEl: '.fix-prev',
             },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        }
-    });
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+    }
 
     // 4. Initialize Teams Swiper
-    const teamsSwiper = new Swiper('.teams-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.team-next',
-            prevEl: '.team-prev',
-        },
-        breakpoints: {
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+    const teamsElement = document.querySelector('.teams-swiper');
+    if (teamsElement) {
+        const teamsSwiper = new Swiper('.teams-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
             },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 25,
+            navigation: {
+                nextEl: '.team-next',
+                prevEl: '.team-prev',
             },
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
             },
-            1200: {
-                slidesPerView: 5,
-                spaceBetween: 30,
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
             },
-        }
-    });
+            loop: true,
+            allowTouchMove: false, // Smooth marquee usually doesn't allow touch interruption
+            freeMode: true,
+        });
+    }
 
     // 5. Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -129,8 +147,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 fixturesContainer.style.display = 'block';
                 resultsComingSoon.style.display = 'none';
                 // Trigger swiper update in case it was hidden
-                fixturesSwiper.update();
+                if (fixturesSwiper) fixturesSwiper.update();
             }
         });
     });
+
+    // 7. Scroll Reveal Logic
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        reveals.forEach(reveal => {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveal.getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Run once on load
 });

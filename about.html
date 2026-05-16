@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About GLC T20 - Global League Cricket International T20 League">
+    <title>About Us | GLCT20</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(28, 10, 37, 0.7), rgba(28, 10, 37, 0.9)), url('Background header.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-content h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .about-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .mission-vision-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 60px;
+            margin-top: 60px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mv-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .mv-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .mv-item h4 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mv-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .mission-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mission-list li {
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .mission-list li i {
+            color: var(--gold);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 991px) {
+            .about-grid, .mv-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-hero {
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="GLCT20 Logo" onerror="this.outerHTML='<span class=\'logo-text\'>GLCT20</span>'">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html#home">HOME</a>
+                <a href="index.html#fixtures">FIXTURES</a>
+                <a href="index.html#teams">TEAMS</a>
+                <a href="index.html#points-table">POINTS TABLE</a>
+                <a href="index.html#news">NEWS</a>
+                <a href="about.html" class="active">ABOUT</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="close-menu"><i class="fas fa-times"></i></div>
+        <a href="index.html#home">HOME</a>
+        <a href="index.html#fixtures">FIXTURES</a>
+        <a href="index.html#teams">TEAMS</a>
+        <a href="index.html#points-table">POINTS TABLE</a>
+        <a href="index.html#news">NEWS</a>
+        <a href="about.html" class="active">ABOUT</a>
+    </div>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="section-title">ABOUT GLC T20</h1>
+            <p>Uniting Nations Through the Spirit of Cricket</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Our Story</h3>
+                    <div class="about-text">
+                        <p>Global League Cricket (GLC T20) is an international T20 cricket league created to deliver world-class cricket, global entertainment, and meaningful sporting impact.</p>
+                        <p>Bringing together international franchises, legendary cricketers, emerging talent, and passionate fans, GLC T20 is designed as a premium platform that celebrates the spirit of cricket while promoting tourism, culture, and global sporting collaboration.</p>
+                    </div>
+                    <div class="about-text">
+                        <p>Our vision is to build a modern cricket ecosystem that supports talent development, strengthens international partnerships, and creates unforgettable experiences for players, partners, and audiences worldwide.</p>
+                        <p>With a strong focus on professionalism, innovation, and global reach, GLC T20 aims to become one of the most exciting and influential cricket leagues on the international stage.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="GLC logo.png" alt="GLC T20" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));">
+                </div>
+            </div>
+
+            <div class="mission-vision-container">
+                <div class="mv-grid">
+                    <div class="mv-item">
+                        <h4><i class="fas fa-eye"></i> VISION</h4>
+                        <p>To become a globally recognized T20 league that unites nations through cricket, entertainment, and cultural exchange.</p>
+                    </div>
+                    <div class="mv-item">
+                        <h4><i class="fas fa-bullseye"></i> MISSION</h4>
+                        <ul class="mission-list">
+                            <li><i class="fas fa-check-circle"></i> Promote international cricket development</li>
+                            <li><i class="fas fa-check-circle"></i> Create opportunities for emerging talent</li>
+                            <li><i class="fas fa-check-circle"></i> Deliver world-class fan experiences</li>
+                            <li><i class="fas fa-check-circle"></i> Support tourism and global partnerships</li>
+                            <li><i class="fas fa-check-circle"></i> Build a sustainable and professional model</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg-pattern"></div>
+        <div class="container footer-content">
+            <div class="footer-hashtag">#Theglobalplayhere</div>
+            
+            <div class="footer-links">
+                <a href="index.html#fixtures">Fixtures</a>
+                <a href="index.html#teams">Teams</a>
+                <a href="index.html#points-table">Points Table</a>
+                <a href="about.html">About Us</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 GLCT20 Championship. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
