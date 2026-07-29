@@ -169,20 +169,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Run once on load
 
-    // 8. Clean up #home in URL and handle Home smooth scroll
-    if (window.location.hash === '#home') {
+    // 8. Clean up index.html and #home in URL bar
+    if (window.location.pathname.endsWith('/index.html')) {
+        const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + (window.location.hash === '#home' ? '' : window.location.hash);
+        history.replaceState(null, '', cleanPath);
+    } else if (window.location.hash === '#home') {
         history.replaceState(null, '', window.location.pathname + window.location.search);
     }
 
-    document.querySelectorAll('a[href="index.html"], a[href="#home"], a[href="./"]').forEach(link => {
+    document.querySelectorAll('a[href="./"], a[href="/"], a[href="index.html"], a[href="#home"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
-            if (isHomePage) {
+            if (isHomePage && !link.getAttribute('href').includes('about')) {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                if (window.location.hash) {
-                    history.replaceState(null, '', window.location.pathname + window.location.search);
-                }
+                const cleanUrl = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search;
+                history.replaceState(null, '', cleanUrl);
             }
         });
     });
