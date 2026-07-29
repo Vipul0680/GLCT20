@@ -169,9 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Run once on load
 
-    // 8. Clean up index.html and #home in URL bar
+    // 8. Clean up index.html, about.html, and #home in URL bar
     if (window.location.pathname.endsWith('/index.html')) {
         const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + (window.location.hash === '#home' ? '' : window.location.hash);
+        history.replaceState(null, '', cleanPath);
+    } else if (window.location.pathname.endsWith('/about.html')) {
+        const cleanPath = window.location.pathname.replace(/\/about\.html$/, '/about') + window.location.search + window.location.hash;
         history.replaceState(null, '', cleanPath);
     } else if (window.location.hash === '#home') {
         history.replaceState(null, '', window.location.pathname + window.location.search);
