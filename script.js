@@ -168,4 +168,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Run once on load
+
+    // 8. Clean up #home in URL and handle Home smooth scroll
+    if (window.location.hash === '#home') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    document.querySelectorAll('a[href="index.html"], a[href="#home"], a[href="./"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+            if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (window.location.hash) {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            }
+        });
+    });
 });
